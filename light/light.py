@@ -2,12 +2,12 @@ import RPi.GPIO as GPIO
 from time import sleep
 
 class LED:
-    def __init__(self, pin=7):
+    def __init__(self, pin):
         self.ledPin = pin
         GPIO.setmode(GPIO.BOARD)
         GPIO.setup(self.ledPin, GPIO.OUT)
         GPIO.output(self.ledPin, GPIO.LOW)
-        print ('LED using pin%d.'%self.ledPin)
+        print ('LED using pin %d.'%self.ledPin)
 
     def on(self):
         GPIO.output(self.ledPin, GPIO.HIGH)
@@ -15,14 +15,68 @@ class LED:
     def off(self):
         GPIO.output(self.ledPin, GPIO.LOW)
 
+class RGB_LED:
+    def __init__(self, red_pin, green_pin, blue_pin):
+        GPIO.setmode(GPIO.BOARD)
+        GPIO.setup(red_pin, GPIO.OUT)
+        GPIO.setup(green_pin, GPIO.OUT)
+        GPIO.setup(blue_pin, GPIO.OUT)
+        GPIO.output(red_pin, GPIO.OUT)
+        GPIO.output(green_pin, GPIO.OUT)
+        GPIO.output(blue_pin, GPIO.OUT)
+        self.pwm_red = GPIO.PWM(red_pin, 2000)
+        self.pwm_green = GPIO.PWM(green_pin, 2000)
+        self.pwm_blue = GPIO.PWM(blue_pin, 2000)
+    def on(self, red_val=0, green_val=0, blue_val=0):
+        self.pwm_red.start(red_val)
+        self.pwm_green.start(green_val)
+        self.pwm_blue.start(blue_val)
+    def set_color(self, red_val, green_val, blue_val):
+        self.pwm_red.ChangeDutyCycle(red_val)
+        self.pwm_green.ChangeDutyCycle(green_val)
+        self.pwm_blue.ChangeDutyCycle(blue_val)
+    def off(self):
+        self.pwm_red.stop()
+        self.pwm_green.stop()
+        self.pwm_blue.stop()
+
+
 if __name__ == '__main__':
-    print ('Program is starting ... \n')
-    LED = LED()
-    try:
-        while True:
-            LED.on()
-            sleep(5)
-            LED.off()
-            sleep(5)
-    except KeyboardInterrupt:   # Press ctrl-c to end the program.
-        GPIO.cleanup()
+    print("Program is starting ... \n")
+    type = input("Are you using a normal LED or a RGB LED? (0-LED, 1-RGB LED) ")
+    print("\n")
+    if type == 0:
+        pin = input("What pin is your LED going to be operated from? ")
+        print("\n")
+        led = LED(pin)
+        try:
+            while True:
+                led.on()
+                sleep(5)
+                led.off()
+                sleep(5)
+        except KeyboardInterrupt:
+            GPIO.cleanup()
+            exit()
+    elif type == 1:
+        from random import randint
+
+        red_pin = input("What pin is your red LED going to be operated from? ")
+        print("\n")
+        green_pin = input("What pin is your green LED going to be operated from? ")
+        print("\n")
+        blue_pin = input("What pin is your blue LED going to be operated from? ")
+        print("\n")
+        led = RGB_LED(red_pin, green_pin, blue_pin)
+
+        try:
+            led.on()
+            while True:
+                red = random.randit(0, 100)
+                green = random.randit(0, 100)
+                blue = random.randit(0, 100)
+                led.set_color(red, green, blue)
+        except:
+            led.off()
+            GPIO.cleanup()
+            exit()

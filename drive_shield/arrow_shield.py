@@ -37,3 +37,4 @@ if __name__ == "__main__":
             sleep(3)
     except KeyboardInterrupt:
         GPIO.cleanup()
+        exit()

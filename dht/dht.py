@@ -83,3 +83,17 @@ class DHT():
             read_dht()
         if read_dht == self.dht_ok:
             return self.humidity, self.temperature
+
+if __name__ == "__main__":
+    print("Program is starting... \n")
+    pin = input("What pin is your DHT going to be read from? ")
+    print("\n")
+    dht = DHT(pin)
+    
+    try:
+        while True:
+            hum, temp = DHT.read_dht()
+            print("Temperature: %d\nHumidity %d" %(temp, hum))
+    except KeyboardInterrupt:
+        GPIO.cleanup()
+        exit()

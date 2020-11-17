@@ -26,7 +26,10 @@ class sensor:
             return False
 
 if __name__ == "__main__":
-    ultra = sensor(10)
+    print("Program is starting... \n")
+    pin = input("What pin is your LED going to be operated from? ")
+    print("\n")
+    ultra = sensor(pin)
 
     try:
         while True:
@@ -37,3 +40,4 @@ if __name__ == "__main__":
                 print("No boundary hit.")
     except KeyboardInterrupt:
         GPIO.cleanup()
+        exit()
