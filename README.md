@@ -28,12 +28,12 @@ This code is forked from Freenove's [RFID Starter Kit for the Raspberry Pi](http
 and SB Components [Motor Shield](https://github.com/sbcshop/MotorShield)
 
 You can download the stable release of this package by running
-`insert pip command here`
+`insert pip command here`\n
 You can download the experimental release of this package by running
 `insert pip command here`
 
-You can visit the source code [here](https://github.com/Builder212/raspi_components).
-You can visit the stable package on PyPI [here](https://pypi.org).
-You can visit the experimental package on TestPyPI [here](https://test.pypi.org).
-[Buy Freenove's RFID Starter Kit for the Raspberry Pi](https://www.amazon.com/Freenove-Raspberry-Processing-Tutorials-Components/dp/B06VTH7L28)
-[Buy SB Component's Motor Shield](https://www.amazon.com/Motorshield-Raspberry-Expansion-Control-ultrasonic/dp/B01MQ2MZDV)
+You can visit the source code [here](https://github.com/Builder212/raspi_components).\n
+You can visit the stable package on PyPI [here](https://pypi.org).\n
+You can visit the experimental package on TestPyPI [here](https://test.pypi.org).\n
+[Buy Freenove's RFID Starter Kit for the Raspberry Pi](https://www.amazon.com/Freenove-Raspberry-Processing-Tutorials-Components/dp/B06VTH7L28)\n
+[Buy SB Component's Motor Shield](https://www.amazon.com/Motorshield-Raspberry-Expansion-Control-ultrasonic/dp/B01MQ2MZDV)\n
