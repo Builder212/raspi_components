@@ -28,10 +28,10 @@ This code is forked from Freenove's [RFID Starter Kit for the Raspberry Pi](http
 and SB Components [Motor Shield](https://github.com/sbcshop/MotorShield)
 
 You can download the stable release of this package by running
-`insert pip command here`  
+`pip install raspi-components`  
 
 You can download the experimental release of this package by running
-`insert pip command here`  
+`pip install -i https://test.pypi.org/simple/ raspi-components-experimental`  
 
 You can visit the source code [here](https://github.com/Builder212/raspi_components).  
 You can visit the stable package on PyPI [here](https://pypi.org/project/raspi-components).  

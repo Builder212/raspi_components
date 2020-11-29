@@ -1,8 +1,7 @@
+import RPi.GPIO as GPIO
 from time import sleep
 
-
 class Adafruit_CharLCD(object):
-
     # commands
     LCD_CLEARDISPLAY        = 0x01
     LCD_RETURNHOME          = 0x02
@@ -30,10 +29,6 @@ class Adafruit_CharLCD(object):
     # flags for display/cursor shift
     LCD_DISPLAYMOVE         = 0x08
     LCD_CURSORMOVE          = 0x00
-
-    # flags for display/cursor shift
-    LCD_DISPLAYMOVE         = 0x08
-    LCD_CURSORMOVE          = 0x00
     LCD_MOVERIGHT           = 0x04
     LCD_MOVELEFT            = 0x00
 
@@ -45,18 +40,14 @@ class Adafruit_CharLCD(object):
     LCD_5x10DOTS            = 0x04
     LCD_5x8DOTS             = 0x00
 
-    def __init__(self, pin_rs=25, pin_e=24, pins_db=[23, 17, 21, 22], GPIO=None):
-        # Emulate the old behavior of using RPi.GPIO if we haven't been given
-        # an explicit GPIO interface to use
-        if not GPIO:
-            import RPi.GPIO as GPIO
-            GPIO.setwarnings(False)
+    def __init__(self, pin_rs=25, pin_e=24, pins_db=[23, 17, 21, 22]):
+        GPIO.setwarnings(False)
         self.GPIO = GPIO
         self.pin_rs = pin_rs
         self.pin_e = pin_e
         self.pins_db = pins_db
 
-        self.GPIO.setmode(GPIO.BCM) #GPIO=None use Raspi PIN in BCM mode
+        self.GPIO.setmode(GPIO.BCM)
         self.GPIO.setup(self.pin_e, GPIO.OUT)
         self.GPIO.setup(self.pin_rs, GPIO.OUT)
 
