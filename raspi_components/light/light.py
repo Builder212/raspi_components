@@ -48,7 +48,7 @@ if __name__ == '__main__':
     type = input("Are you using a normal LED or a RGB LED? (0-LED, 1-RGB LED) ")
     print("\n")
 
-    if type == 0:
+    if type == "0":
         pin = input("What pin is your LED going to be operated from? ")
         print("\n")
         led = LED(pin)
@@ -63,7 +63,7 @@ if __name__ == '__main__':
             led.off()
             exit()
 
-    elif type == 1:
+    elif type == "1":
         from random import randint
 
         red_pin = input("What pin is your red LED going to be operated from? ")
