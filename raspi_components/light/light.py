@@ -10,13 +10,10 @@ class LED:
         GPIO.output(self.pin, GPIO.LOW)
 
     def on(self):
-        GPIO.setmode(GPIO.BOARD)
         GPIO.output(self.pin, GPIO.HIGH)
 
     def off(self):
-        GPIO.setmode(GPIO.BOARD)
         GPIO.output(self.pin, GPIO.LOW)
-        GPIO.cleanup()
 
 class RGB_LED:
     def __init__(self, red_pin, green_pin, blue_pin):
@@ -59,9 +56,9 @@ if __name__ == '__main__':
         try:
             while True:
                 led.on()
-                sleep(5)
+                sleep(1)
                 led.off()
-                sleep(5)
+                sleep(1)
         except KeyboardInterrupt:
             led.off()
             exit()
