@@ -32,8 +32,10 @@ class Adafruit_CharLCD(object):
     two_line = 0x08
     one_line = 0x00
 
-    def __init__(self, pin_rs=25, pin_e=24, pins_db=[23, 17, 21, 22]):
-        GPIO.setwarnings(False)
+    def __init__(self, pin_rs=25, pin_e=24, pins_db=[23, 17, 21, 22], GPIO):
+        if GPIO == None:
+            import RPi.GPIO as GPIO
+            GPIO.setwarnings(False)
         self.GPIO = GPIO
         self.pin_rs = pin_rs
         self.pin_e = pin_e
