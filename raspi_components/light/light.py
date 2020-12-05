@@ -15,6 +15,16 @@ class LED:
     def off(self):
         GPIO.output(self.pin, GPIO.LOW)
 
+    def test(self):
+        try:
+            while True:
+                led.on()
+                sleep(1)
+                led.off()
+                sleep(1)
+        except KeyboardInterrupt:
+            led.off()
+
 class RGB_LED:
     def __init__(self, red_pin, green_pin, blue_pin):
         GPIO.setmode(GPIO.BOARD)
@@ -53,15 +63,7 @@ if __name__ == '__main__':
         print("\n")
         led = LED(pin)
 
-        try:
-            while True:
-                led.on()
-                sleep(1)
-                led.off()
-                sleep(1)
-        except KeyboardInterrupt:
-            led.off()
-            exit()
+        led.test()
 
     elif type == "1":
         from random import randint
@@ -72,7 +74,7 @@ if __name__ == '__main__':
         print("\n")
         blue_pin = input("What pin is your blue LED going to be operated from? ")
         print("\n")
-        led, dim = RGB_LED(red_pin, green_pin, blue_pin)
+        led = RGB_LED(red_pin, green_pin, blue_pin)
 
         try:
             led.on()
