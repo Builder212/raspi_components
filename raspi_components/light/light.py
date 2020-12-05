@@ -59,6 +59,8 @@ class RGB_LED:
         GPIO.cleanup()
 
     def test(self):
+        from random import randint
+        
         try:
             self.on()
             while True:
