@@ -3,7 +3,7 @@ from time import sleep
 
 class LED:
     def __init__(self, pin):
-        self.pin = pin
+        self.pin = int(pin)
         GPIO.setmode(GPIO.BOARD)
         GPIO.setup(self.pin, GPIO.OUT)
         GPIO.output(self.pin, GPIO.LOW)
@@ -26,9 +26,9 @@ class RGB_LED:
         GPIO.output(green_pin, GPIO.OUT)
         GPIO.output(blue_pin, GPIO.OUT)
 
-        self.pwm_red = GPIO.PWM(red_pin, 2000)
-        self.pwm_green = GPIO.PWM(green_pin, 2000)
-        self.pwm_blue = GPIO.PWM(blue_pin, 2000)
+        self.pwm_red = GPIO.PWM(int(red_pin), 2000)
+        self.pwm_green = GPIO.PWM(int(green_pin), 2000)
+        self.pwm_blue = GPIO.PWM(int(blue_pin), 2000)
 
     def on(self, red_val=0, green_val=0, blue_val=0):
         self.pwm_red.start(red_val)
