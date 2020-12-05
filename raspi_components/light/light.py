@@ -33,6 +33,7 @@ class RGB_LED:
         self.blue_pin = int(blue_pin)
 
         GPIO.setmode(GPIO.BOARD)
+        GPIO.setwarnings(False)
         GPIO.setup(self.red_pin, GPIO.OUT)
         GPIO.setup(self.green_pin, GPIO.OUT)
         GPIO.setup(self.blue_pin, GPIO.OUT)
@@ -60,7 +61,7 @@ class RGB_LED:
 
     def test(self):
         from random import randint
-        
+
         try:
             self.on()
             while True:
