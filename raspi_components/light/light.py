@@ -27,18 +27,22 @@ class LED:
 
 class RGB_LED:
     def __init__(self, red_pin, green_pin, blue_pin):
+        self.red_pin = int(red_pin)
+        self.green_pin = int(green_pin)
+        self.blue_pin = int(blue_pin)
+
         GPIO.setmode(GPIO.BOARD)
-        GPIO.setup(red_pin, GPIO.OUT)
-        GPIO.setup(green_pin, GPIO.OUT)
-        GPIO.setup(blue_pin, GPIO.OUT)
+        GPIO.setup(self.red_pin, GPIO.OUT)
+        GPIO.setup(self.green_pin, GPIO.OUT)
+        GPIO.setup(self.blue_pin, GPIO.OUT)
 
-        GPIO.output(red_pin, GPIO.OUT)
-        GPIO.output(green_pin, GPIO.OUT)
-        GPIO.output(blue_pin, GPIO.OUT)
+        GPIO.output(self.red_pin, GPIO.OUT)
+        GPIO.output(self.green_pin, GPIO.OUT)
+        GPIO.output(self.blue_pin, GPIO.OUT)
 
-        self.pwm_red = GPIO.PWM(int(red_pin), 2000)
-        self.pwm_green = GPIO.PWM(int(green_pin), 2000)
-        self.pwm_blue = GPIO.PWM(int(blue_pin), 2000)
+        self.pwm_red = GPIO.PWM(self.red_pin, 2000)
+        self.pwm_green = GPIO.PWM(self.green_pin, 2000)
+        self.pwm_blue = GPIO.PWM(self.blue_pin, 2000)
 
     def on(self, red_val=0, green_val=0, blue_val=0):
         self.pwm_red.start(red_val)
