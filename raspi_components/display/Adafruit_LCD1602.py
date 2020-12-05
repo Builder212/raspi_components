@@ -1,5 +1,5 @@
-import RPi.GPIO as GPIO
 from time import sleep
+import PCF8574 as PCF8574_GPIO
 
 class Adafruit_CharLCD(object):
     # commands
@@ -32,11 +32,18 @@ class Adafruit_CharLCD(object):
     two_line = 0x08
     one_line = 0x00
 
-    def __init__(self, pin_rs=25, pin_e=24, pins_db=[23, 17, 21, 22], GPIO):
-        if GPIO == None:
-            import RPi.GPIO as GPIO
-            GPIO.setwarnings(False)
-        self.GPIO = GPIO
+    PCF8574_address = 0x27
+    PCF8574A_address = 0x3F
+
+    def __init__(self, pin_rs=25, pin_e=24, pins_db=[23, 17, 21, 22]):
+        try:
+            GPIO= PCF8574_GPIO(PCF8574_address)
+        except:
+            try:
+                GPIO = PCF8574_GPIO(PCF8574A_address)
+            except:
+                import RPi.GPIO as GPIO
+                GPIO.setwarnings(False)
         self.pin_rs = pin_rs
         self.pin_e = pin_e
         self.pins_db = pins_db
