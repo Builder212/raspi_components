@@ -18,12 +18,13 @@ class LED:
     def test(self):
         try:
             while True:
-                led.on()
+                self.on()
                 sleep(1)
-                led.off()
+                self.off()
                 sleep(1)
         except KeyboardInterrupt:
-            led.off()
+            self.off()
+            exit()
 
 class RGB_LED:
     def __init__(self, red_pin, green_pin, blue_pin):
@@ -57,6 +58,19 @@ class RGB_LED:
     def off(self):
         GPIO.cleanup()
 
+    def test(self):
+        try:
+            self.on()
+            while True:
+                red = randit(0, 100)
+                green = randit(0, 100)
+                blue = randit(0, 100)
+                self.set_color(red, green, blue)
+                sleep(1)
+        except KeyboardInterrupt:
+            self.off()
+            exit()
+
 if __name__ == '__main__':
     print("Program is starting ... \n")
     type = input("Are you using a normal LED or a RGB LED? (0-LED, 1-RGB LED) ")
@@ -70,8 +84,6 @@ if __name__ == '__main__':
         led.test()
 
     elif type == "1":
-        from random import randint
-
         red_pin = input("What pin is your red LED going to be operated from? ")
         print("\n")
         green_pin = input("What pin is your green LED going to be operated from? ")
@@ -80,14 +92,4 @@ if __name__ == '__main__':
         print("\n")
         led = RGB_LED(red_pin, green_pin, blue_pin)
 
-        try:
-            led.on()
-            while True:
-                red = random.randit(0, 100)
-                green = random.randit(0, 100)
-                blue = random.randit(0, 100)
-                led.set_color(red, green, blue)
-                sleep(5)
-        except:
-            led.off()
-            exit()
+        led.test()
