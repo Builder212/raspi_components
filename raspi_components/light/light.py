@@ -62,9 +62,9 @@ class RGB_LED:
         try:
             self.on()
             while True:
-                red = randit(0, 100)
-                green = randit(0, 100)
-                blue = randit(0, 100)
+                red = randint(0, 100)
+                green = randint(0, 100)
+                blue = randint(0, 100)
                 self.set_color(red, green, blue)
                 sleep(1)
         except KeyboardInterrupt:
