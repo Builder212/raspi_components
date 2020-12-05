@@ -3,7 +3,7 @@ import time, datetime, os
 
 class dht():
     def __init__(self, pin):
-        self.pin = pin
+        self.pin = int(pin)
         self.bits = [0, 0, 0, 0, 0]
         GPIO.setmode(GPIO.BOARD)
         self.humidity = 0
@@ -88,7 +88,7 @@ if __name__ == "__main__":
     print("Program is starting... \n")
     pin = input("What pin is your DHT going to be read from? ")
     print("\n")
-    dht = DHT(pin)
+    dht = dht(pin)
 
     try:
         while True:
@@ -97,3 +97,5 @@ if __name__ == "__main__":
     except KeyboardInterrupt:
         GPIO.cleanup()
         exit()
+
+#come back to this, I believe my dht is faulty
