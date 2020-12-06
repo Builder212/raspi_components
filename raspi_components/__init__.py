@@ -1,6 +1,5 @@
 from .button/button import button
 from .buzzer/buzzer import buzzer
-from .dht/dht import dht
 from .drive_shield/arrow_shield import arrow_shield
 from .drive_shield/motor_shield import motor_shield
 from .drive_shield/sensor_shield import sensor_shield

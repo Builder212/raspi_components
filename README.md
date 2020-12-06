@@ -6,7 +6,6 @@
 - Buttons
 - Buzzers
 - Cameras
-- DHT11 Sensors
 - LCD Displays
 - Motors
 - Ultrasonic Sensors
