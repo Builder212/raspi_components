@@ -16,10 +16,12 @@ class LedTest:
 
             while True:
                 led.on()
-                for x in range(0,100):
+                for x in range(0,100,1):
                     led.dim(x)
-                for x in range(100, 0):
+                    sleep(.1)
+                for x in range(100,0,-1):
                     led.dim(x)
+                    sleep(.1)
                 led.off()
                 sleep(1)
         except KeyboardInterrupt:

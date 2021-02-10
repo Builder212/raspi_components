@@ -14,6 +14,8 @@ class LED:
             GPIO.setmode(GPIO.BOARD)
             GPIO.setup(self.pin, GPIO.OUT)
             GPIO.output(self.pin, GPIO.LOW)
+
+            self.led_dim = GPIO.PWM(self.pin, 500)
         except:
             raise LedError("Error during the initiation of the LED class.")
 
@@ -32,7 +34,6 @@ class LED:
         Turns the defined LED on.
         """
         try:
-            self.led_dim = GPIO.PWN(self.pin, 500)
             self.led_dim.start(brightness)
         except:
             raise LedError("Error while turning the LED on.")
