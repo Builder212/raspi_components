@@ -18,9 +18,9 @@ class RGBLedTest:
             led.on()
 
             while True:
-                red = randint(0, 255)
-                green = randint(0, 255)
-                blue = randint(0, 255)
+                red = randint(0, 100)
+                green = randint(0, 100)
+                blue = randint(0, 100)
                 led.set_color(red, green, blue)
                 sleep(1)
         except KeyboardInterrupt:

@@ -1,4 +1,5 @@
 import RPi.GPIO as GPIO
+from error import RGBLedError
 
 class RGB_LED:
     def __init__(self, red_pin, green_pin, blue_pin):
