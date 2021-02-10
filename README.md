@@ -12,6 +12,8 @@ This code is based off of Freenove's [RFID Starter Kit for the Raspberry Pi](htt
 You can download the stable release of this package by running
 `pip install raspi-components`
 
+You can view the documentation [here](https://raspi-components.readthedocs.io/en/latest/?#).
+
 You can visit the source code [here](https://github.com/Builder212/raspi_components).  
 You can visit the stable package on PyPI [here](https://pypi.org/project/raspi-components).  
 [Buy Freenove's RFID Starter Kit for the Raspberry Pi](https://www.amazon.com/Freenove-Raspberry-Processing-Tutorials-Components/dp/B06VTH7L28)
