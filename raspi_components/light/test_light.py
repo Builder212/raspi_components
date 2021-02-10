@@ -1,7 +1,7 @@
 from time import sleep
 from light import LED
 
-def LedTest:
+class LedTest:
     @classmethod
     def test(self, pin):
         try:
@@ -19,8 +19,3 @@ def LedTest:
         finally:
             led.off()
             exit()
-
-if __name__ == '__main__':
-    pin = input("What pin is your LED going to be operated from? ")
-    print("\n")
-    LedTest.test(pin)
