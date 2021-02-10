@@ -10,19 +10,30 @@ class LED:
         """
         try:
             self.pin = int(pin)
+
             GPIO.setmode(GPIO.BOARD)
-            GPIO.setwarnings(False)
             GPIO.setup(self.pin, GPIO.OUT)
             GPIO.output(self.pin, GPIO.LOW)
         except:
             raise LedError("Error during the initiation of the LED class.")
 
-    def on(self):
+    def dim(self, brightness):
+        if brightness < 0:
+            brightness = 0
+        elif brightness > 100:
+            brightness = 100
+        else:
+            pass
+
+        self.led_dim.ChangeDutyCycle(brightness)
+
+    def on(self, brightness=100):
         """
         Turns the defined LED on.
         """
         try:
-            GPIO.output(self.pin, GPIO.HIGH)
+            self.led_dim = GPIO.PWN(self.pin, 500)
+            self.led_dim.start(brightness)
         except:
             raise LedError("Error while turning the LED on.")
 
@@ -31,6 +42,6 @@ class LED:
         Turns the defined LED off.
         """
         try:
-            GPIO.output(self.pin, GPIO.LOW)
+            self.led_dim.stop()
         except:
             raise LedError("Error while turning the LED off.")

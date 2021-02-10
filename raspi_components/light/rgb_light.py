@@ -5,6 +5,8 @@ class RGB_LED:
     def __init__(self, red_pin, green_pin, blue_pin):
         """
         This class is used to control a RGB LED via the GPIO.
+        Please make sure you have 220 Ohm resistors between the 3 gpio pins
+        and the LED.
         """
         try:
             self.red_pin = int(red_pin)
