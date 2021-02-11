@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Welcome to raspi_components documentation! &#8212; raspi_components 1.0.0 documentation</title>
+    <title>Welcome to raspi_components documentation! &#8212; raspi_components 1.0.9 documentation</title>
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -31,34 +31,95 @@
           <div class="body" role="main">
             
   <div class="section" id="welcome-to-raspi-components-documentation">
-<h1>Welcome to raspi_components documentation!<a class="headerlink" href="#welcome-to-raspi-components-documentation" title="Permalink to this headline">¶</a></h1>
-<p>Raspi_components is designed to ease the process of working with
-different components connected to the raspberry pi via the gpio.</p>
+<h1>Welcome to <strong>raspi_components</strong> documentation!<a class="headerlink" href="#welcome-to-raspi-components-documentation" title="Permalink to this headline">¶</a></h1>
+<p>This python library is designed to ease the process of working with
+different components connected to the raspberry pi via its gpio.</p>
 <div class="section" id="features">
 <h2>Features<a class="headerlink" href="#features" title="Permalink to this headline">¶</a></h2>
 <p>This library can work with components such as:</p>
 <ul class="simple">
 <li><p>Buttons</p></li>
-<li><p>Lights</p></li>
+<li><p>LEDs</p></li>
+<li><p>RGB LEDs</p></li>
 </ul>
 </div>
 <div class="section" id="installation">
 <h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
-<p>To install the stable release of raspi_components, run:</p>
+<p>To install raspi_components, run:</p>
 <blockquote>
 <div><p>pip install raspi_components</p>
 </div></blockquote>
 </div>
+<div class="section" id="working-with-the-library">
+<h2>Working with the library<a class="headerlink" href="#working-with-the-library" title="Permalink to this headline">¶</a></h2>
+<p>To import the library, run:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">raspi_components</span>
+</pre></div>
+</div>
+<p>The Button class:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">button</span> <span class="o">=</span> <span class="n">raspi_components</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="n">pin</span><span class="p">)</span>
+<span class="c1">#This initiates the button class on the chosen pin.</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">button</span><span class="o">.</span><span class="n">is_pressed</span><span class="p">())</span>
+<span class="c1">#Will return True if the button is pressed, otherwise will return False.</span>
+
+<span class="n">raspi_components</span><span class="o">.</span><span class="n">ButtonTest</span><span class="o">.</span><span class="n">test</span><span class="p">(</span><span class="n">pin</span><span class="p">)</span>
+<span class="c1">#This is a test class, and will loop through, printing whether the button is</span>
+<span class="c1">#pressed or not every second.</span>
+</pre></div>
+</div>
+<p>The Led class:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">led</span> <span class="o">=</span> <span class="n">raspi_components</span><span class="o">.</span><span class="n">Led</span><span class="p">(</span><span class="n">pin</span><span class="p">)</span>
+<span class="c1">#this initiates the LED on the chosen pin.</span>
+
+<span class="n">led</span><span class="o">.</span><span class="n">on</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="c1">#this turns the LED on and sets the brightness to 100%.</span>
+<span class="c1">#You can have any value between 0 and 100 here.</span>
+
+<span class="n">led</span><span class="o">.</span><span class="n">off</span><span class="p">()</span>
+<span class="c1">#this turns the LED off.</span>
+
+<span class="n">led</span><span class="o">.</span><span class="n">dim</span><span class="p">(</span><span class="n">brightness</span><span class="p">)</span>
+<span class="c1">#this dims the LED. You can have any value from 0 to 100 here.</span>
+
+<span class="n">raspi_components</span><span class="o">.</span><span class="n">LedTest</span><span class="o">.</span><span class="n">test</span><span class="p">(</span><span class="n">pin</span><span class="p">)</span>
+<span class="c1">#This is a test class, it will loop through turning the LED on and off,</span>
+<span class="c1">#and dimming it.</span>
+</pre></div>
+</div>
+<p>The RGBLed class:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">rgb_led</span> <span class="o">=</span> <span class="n">raspi_components</span><span class="o">.</span><span class="n">RGBLed</span><span class="p">(</span><span class="n">red_pin</span><span class="p">,</span> <span class="n">green_pin</span><span class="p">,</span> <span class="n">blue_pin</span><span class="p">)</span>
+<span class="c1">#This initiates the RGB LED, taking the input of the chosen pins for</span>
+<span class="c1">#red, green, and blue.</span>
+
+<span class="n">rgb_led</span><span class="o">.</span><span class="n">on</span><span class="p">(</span><span class="n">red_val</span><span class="p">,</span> <span class="n">green_val</span><span class="p">,</span> <span class="n">blue_val</span><span class="p">)</span>
+<span class="c1">#This turns the RGB LED on. red_val, green_val, and blue_val are set to 0</span>
+<span class="c1">#by default, but this can be changed to change the color set when turned on.</span>
+<span class="c1">#These values can be between 0 and 100.</span>
+
+<span class="n">rgb_led</span><span class="o">.</span><span class="n">set_color</span><span class="p">(</span><span class="n">red_val</span><span class="p">,</span> <span class="n">green_val</span><span class="p">,</span> <span class="n">blue_val</span><span class="p">)</span>
+<span class="c1">#This changes the color of the RGB LED. These values can be between 0 and 100.</span>
+
+<span class="n">rgb_led</span><span class="o">.</span><span class="n">off</span><span class="p">()</span>
+<span class="c1">#This will turn the RGB LED off.</span>
+
+<span class="n">raspi_components</span><span class="o">.</span><span class="n">RGBLedTest</span><span class="o">.</span><span class="n">test</span><span class="p">(</span><span class="n">red_pin</span><span class="p">,</span> <span class="n">green_pin</span><span class="p">,</span> <span class="n">blue_pin</span><span class="p">)</span>
+<span class="c1">#This is a test class, it will turn the RGB LED on and off, and randomly assign</span>
+<span class="c1">#it a color.</span>
+</pre></div>
+</div>
+</div>
 <div class="section" id="contribute">
 <h2>Contribute<a class="headerlink" href="#contribute" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p>Issue Tracker: github.com/Builder212/raspi_components/issues</p></li>
-<li><p>Source Code: github.com/Builder212/raspi_components/</p></li>
+<li><p><a class="reference external" href="https://github.com/Builder212/raspi_components/issues">Issue Tracker</a></p></li>
+<li><p><a class="reference external" href="https://github.com/Builder212/raspi_components/">Source Code</a></p></li>
 </ul>
 </div>
 <div class="section" id="support">
 <h2>Support<a class="headerlink" href="#support" title="Permalink to this headline">¶</a></h2>
-<p>If you are having issues, please open an issue on the repository.</p>
+<p>If you are having issues, or would like to request a feature,
+please open an issue on the repository.</p>
 </div>
 <div class="section" id="license">
 <h2>License<a class="headerlink" href="#license" title="Permalink to this headline">¶</a></h2>
