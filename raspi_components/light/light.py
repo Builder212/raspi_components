@@ -1,5 +1,5 @@
 import RPi.GPIO as GPIO
-from error import LedError
+from .light_errors import LedError
 
 class LED:
     def __init__(self, pin):

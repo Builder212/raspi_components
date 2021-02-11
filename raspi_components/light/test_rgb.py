@@ -1,4 +1,4 @@
-from rgb_light import RGB_LED
+from .rgb_light import RGB_LED
 from time import sleep
 from random import randint
 

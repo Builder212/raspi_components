@@ -1,5 +1,5 @@
 import RPi.GPIO as GPIO
-from error import ButtonError
+from .button_errors import ButtonError
 
 class Button:
     def __init__(self, pin):

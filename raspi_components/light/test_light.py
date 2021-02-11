@@ -1,5 +1,5 @@
 from time import sleep
-from light import LED
+from .light import LED
 
 class LedTest:
     def __init__():
