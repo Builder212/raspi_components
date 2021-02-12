@@ -30,6 +30,16 @@ To import the library, run:
     import raspi_components
 
 The Button class:
+-----------------
+
+Wiring examples:
+
+.. image:: schems/button_bb.jpg
+  :width: 325
+.. image:: schems/button_schem.jpg
+  :width: 325
+
+Class overview:
 
 .. code-block:: python
 
@@ -44,6 +54,16 @@ The Button class:
     #pressed or not every second.
 
 The Led class:
+--------------
+
+Wiring examples:
+
+.. image:: schems/led_bb.jpg
+  :width: 325
+.. image:: schems/led_schem.jpg
+  :width: 325
+
+Class overview:
 
 .. code-block:: python
 
@@ -51,8 +71,9 @@ The Led class:
     #this initiates the LED on the chosen pin.
 
     led.on(100)
-    #this turns the LED on and sets the brightness to 100%.
-    #You can have any value between 0 and 100 here.
+    #This turns the LED on and sets the brightness to 100%.
+    #You can have any value between 0 and 100 here. If left
+    #Blank the default value is 100.
 
     led.off()
     #this turns the LED off.
@@ -65,6 +86,16 @@ The Led class:
     #and dimming it.
 
 The RGBLed class:
+-----------------
+
+Wiring examples:
+
+.. image:: schems/rgb_led_bb.jpg
+  :width: 325
+.. image:: schems/rgb_led_schem.jpg
+  :width: 325
+
+Class overview:
 
 .. code-block:: python
 

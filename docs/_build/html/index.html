@@ -56,7 +56,13 @@ different components connected to the raspberry pi via its gpio.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">raspi_components</span>
 </pre></div>
 </div>
-<p>The Button class:</p>
+</div>
+<div class="section" id="the-button-class">
+<h2>The Button class:<a class="headerlink" href="#the-button-class" title="Permalink to this headline">¶</a></h2>
+<p>Wiring examples:</p>
+<a class="reference internal image-reference" href="_images/button_bb.jpg"><img alt="_images/button_bb.jpg" src="_images/button_bb.jpg" style="width: 325px;" /></a>
+<a class="reference internal image-reference" href="_images/button_schem.jpg"><img alt="_images/button_schem.jpg" src="_images/button_schem.jpg" style="width: 325px;" /></a>
+<p>Class overview:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">button</span> <span class="o">=</span> <span class="n">raspi_components</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="n">pin</span><span class="p">)</span>
 <span class="c1">#This initiates the button class on the chosen pin.</span>
 
@@ -68,13 +74,20 @@ different components connected to the raspberry pi via its gpio.</p>
 <span class="c1">#pressed or not every second.</span>
 </pre></div>
 </div>
-<p>The Led class:</p>
+</div>
+<div class="section" id="the-led-class">
+<h2>The Led class:<a class="headerlink" href="#the-led-class" title="Permalink to this headline">¶</a></h2>
+<p>Wiring examples:</p>
+<a class="reference internal image-reference" href="_images/led_bb.jpg"><img alt="_images/led_bb.jpg" src="_images/led_bb.jpg" style="width: 325px;" /></a>
+<a class="reference internal image-reference" href="_images/led_schem.jpg"><img alt="_images/led_schem.jpg" src="_images/led_schem.jpg" style="width: 325px;" /></a>
+<p>Class overview:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">led</span> <span class="o">=</span> <span class="n">raspi_components</span><span class="o">.</span><span class="n">Led</span><span class="p">(</span><span class="n">pin</span><span class="p">)</span>
 <span class="c1">#this initiates the LED on the chosen pin.</span>
 
 <span class="n">led</span><span class="o">.</span><span class="n">on</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
-<span class="c1">#this turns the LED on and sets the brightness to 100%.</span>
-<span class="c1">#You can have any value between 0 and 100 here.</span>
+<span class="c1">#This turns the LED on and sets the brightness to 100%.</span>
+<span class="c1">#You can have any value between 0 and 100 here. If left</span>
+<span class="c1">#Blank the default value is 100.</span>
 
 <span class="n">led</span><span class="o">.</span><span class="n">off</span><span class="p">()</span>
 <span class="c1">#this turns the LED off.</span>
@@ -87,7 +100,13 @@ different components connected to the raspberry pi via its gpio.</p>
 <span class="c1">#and dimming it.</span>
 </pre></div>
 </div>
-<p>The RGBLed class:</p>
+</div>
+<div class="section" id="the-rgbled-class">
+<h2>The RGBLed class:<a class="headerlink" href="#the-rgbled-class" title="Permalink to this headline">¶</a></h2>
+<p>Wiring examples:</p>
+<a class="reference internal image-reference" href="_images/rgb_led_bb.jpg"><img alt="_images/rgb_led_bb.jpg" src="_images/rgb_led_bb.jpg" style="width: 325px;" /></a>
+<a class="reference internal image-reference" href="_images/rgb_led_schem.jpg"><img alt="_images/rgb_led_schem.jpg" src="_images/rgb_led_schem.jpg" style="width: 325px;" /></a>
+<p>Class overview:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">rgb_led</span> <span class="o">=</span> <span class="n">raspi_components</span><span class="o">.</span><span class="n">RGBLed</span><span class="p">(</span><span class="n">red_pin</span><span class="p">,</span> <span class="n">green_pin</span><span class="p">,</span> <span class="n">blue_pin</span><span class="p">)</span>
 <span class="c1">#This initiates the RGB LED, taking the input of the chosen pins for</span>
 <span class="c1">#red, green, and blue.</span>
