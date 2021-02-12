@@ -124,6 +124,8 @@ Contribute
 
 - `Issue Tracker <https://github.com/Builder212/raspi_components/issues>`_
 - `Source Code <https://github.com/Builder212/raspi_components/>`_
+- `Documentation <https://raspi-components.readthedocs.io/en/latest/?#>`_
+- `Package on PyPi <https://pypi.org/project/raspi-components/>`_
 
 Support
 -------
