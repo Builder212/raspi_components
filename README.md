@@ -6,6 +6,7 @@
 - Buttons
 - LEDs
 - RGB LEDs
+- Active Buzzers
 
 This code is based off of Freenove's [RFID Starter Kit for the Raspberry Pi](https://github.com/Freenove/Freenove_RFID_Starter_Kit_for_Raspberry_Pi)
 

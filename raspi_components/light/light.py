@@ -1,12 +1,15 @@
 import RPi.GPIO as GPIO
 from .light_errors import LedError
 
-class LED:
+class Led:
+    """
+    This is a class used to control LED's directly connected to the GPIO via a pin given.
+    See the documentation for an example of how to wire the LED.
+    """
     def __init__(self, pin):
         """
-        This is a class used to control LED's directly connect to the GPIO via a pin given.
-        Make sure that you are using a 220 Ohm resistor between the gpio pin and the led,
-        and that you complete the circuit to the ground.
+        This initates the LED on the given pin, setting it into the output mode,
+        making sure it is off, and setting the PWM up so that the LED can be dimmed.
         """
         try:
             self.pin = int(pin)
@@ -19,19 +22,9 @@ class LED:
         except:
             raise LedError("Error during the initiation of the LED class.")
 
-    def dim(self, brightness):
-        if brightness < 0:
-            brightness = 0
-        elif brightness > 100:
-            brightness = 100
-        else:
-            pass
-
-        self.led_dim.ChangeDutyCycle(brightness)
-
     def on(self, brightness=100):
         """
-        Turns the defined LED on.
+        Turns the defined LED on, the brightness is set by default to 100%.
         """
         try:
             self.led_dim.start(brightness)
@@ -46,3 +39,20 @@ class LED:
             self.led_dim.stop()
         except:
             raise LedError("Error while turning the LED off.")
+
+    def dim(self, brightness):
+        """
+        Dims the definied LED. Keep in mind, that if you don't first turn the
+        LED on this will error out.
+        """
+        if brightness < 0:
+            brightness = 0
+        elif brightness > 100:
+            brightness = 100
+        else:
+            pass
+
+        try:
+            self.led_dim.ChangeDutyCycle(brightness)
+        except:
+            raise LedError("Error while dimming the LED. Make sure you have turned the LED on.")

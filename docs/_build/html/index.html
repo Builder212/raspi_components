@@ -64,14 +64,14 @@ different components connected to the raspberry pi via its gpio.</p>
 <a class="reference internal image-reference" href="_images/button_schem.jpg"><img alt="_images/button_schem.jpg" src="_images/button_schem.jpg" style="width: 325px;" /></a>
 <p>Class overview:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">button</span> <span class="o">=</span> <span class="n">raspi_components</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="n">pin</span><span class="p">)</span>
-<span class="c1">#This initiates the button class on the chosen pin.</span>
+<span class="c1"># This initiates the button class on the chosen pin.</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">button</span><span class="o">.</span><span class="n">is_pressed</span><span class="p">())</span>
-<span class="c1">#Will return True if the button is pressed, otherwise will return False.</span>
+<span class="c1"># Will return True if the button is pressed, otherwise will return False.</span>
 
 <span class="n">raspi_components</span><span class="o">.</span><span class="n">ButtonTest</span><span class="o">.</span><span class="n">test</span><span class="p">(</span><span class="n">pin</span><span class="p">)</span>
-<span class="c1">#This is a test class, and will loop through, printing whether the button is</span>
-<span class="c1">#pressed or not every second.</span>
+<span class="c1"># This is a test class, and will loop through, printing whether the button is</span>
+<span class="c1"># pressed or not every second.</span>
 </pre></div>
 </div>
 </div>
@@ -82,22 +82,22 @@ different components connected to the raspberry pi via its gpio.</p>
 <a class="reference internal image-reference" href="_images/led_schem.jpg"><img alt="_images/led_schem.jpg" src="_images/led_schem.jpg" style="width: 325px;" /></a>
 <p>Class overview:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">led</span> <span class="o">=</span> <span class="n">raspi_components</span><span class="o">.</span><span class="n">Led</span><span class="p">(</span><span class="n">pin</span><span class="p">)</span>
-<span class="c1">#this initiates the LED on the chosen pin.</span>
+<span class="c1"># This initiates the LED on the chosen pin.</span>
 
 <span class="n">led</span><span class="o">.</span><span class="n">on</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
-<span class="c1">#This turns the LED on and sets the brightness to 100%.</span>
-<span class="c1">#You can have any value between 0 and 100 here. If left</span>
-<span class="c1">#Blank the default value is 100.</span>
+<span class="c1"># This turns the LED on and sets the brightness to 100%.</span>
+<span class="c1"># You can have any value between 0 and 100 here. If left</span>
+<span class="c1"># Blank the default value is 100.</span>
 
 <span class="n">led</span><span class="o">.</span><span class="n">off</span><span class="p">()</span>
-<span class="c1">#this turns the LED off.</span>
+<span class="c1"># This turns the LED off.</span>
 
 <span class="n">led</span><span class="o">.</span><span class="n">dim</span><span class="p">(</span><span class="n">brightness</span><span class="p">)</span>
-<span class="c1">#this dims the LED. You can have any value from 0 to 100 here.</span>
+<span class="c1"># This dims the LED. You can have any value from 0 to 100 here.</span>
 
 <span class="n">raspi_components</span><span class="o">.</span><span class="n">LedTest</span><span class="o">.</span><span class="n">test</span><span class="p">(</span><span class="n">pin</span><span class="p">)</span>
-<span class="c1">#This is a test class, it will loop through turning the LED on and off,</span>
-<span class="c1">#and dimming it.</span>
+<span class="c1"># This is a test class, it will loop through turning the LED on and off,</span>
+<span class="c1"># and dimming it.</span>
 </pre></div>
 </div>
 </div>
@@ -108,31 +108,56 @@ different components connected to the raspberry pi via its gpio.</p>
 <a class="reference internal image-reference" href="_images/rgb_led_schem.jpg"><img alt="_images/rgb_led_schem.jpg" src="_images/rgb_led_schem.jpg" style="width: 325px;" /></a>
 <p>Class overview:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">rgb_led</span> <span class="o">=</span> <span class="n">raspi_components</span><span class="o">.</span><span class="n">RGBLed</span><span class="p">(</span><span class="n">red_pin</span><span class="p">,</span> <span class="n">green_pin</span><span class="p">,</span> <span class="n">blue_pin</span><span class="p">)</span>
-<span class="c1">#This initiates the RGB LED, taking the input of the chosen pins for</span>
-<span class="c1">#red, green, and blue.</span>
+<span class="c1"># This initiates the RGB LED, taking the input of the chosen pins for</span>
+<span class="c1"># red, green, and blue.</span>
 
 <span class="n">rgb_led</span><span class="o">.</span><span class="n">on</span><span class="p">(</span><span class="n">red_val</span><span class="p">,</span> <span class="n">green_val</span><span class="p">,</span> <span class="n">blue_val</span><span class="p">)</span>
-<span class="c1">#This turns the RGB LED on. red_val, green_val, and blue_val are set to 0</span>
-<span class="c1">#by default, but this can be changed to change the color set when turned on.</span>
-<span class="c1">#These values can be between 0 and 100.</span>
+<span class="c1"># This turns the RGB LED on. red_val, green_val, and blue_val are set to 0</span>
+<span class="c1"># by default, but this can be changed to change the color set when turned on.</span>
+<span class="c1"># These values can be between 0 and 100.</span>
 
 <span class="n">rgb_led</span><span class="o">.</span><span class="n">set_color</span><span class="p">(</span><span class="n">red_val</span><span class="p">,</span> <span class="n">green_val</span><span class="p">,</span> <span class="n">blue_val</span><span class="p">)</span>
-<span class="c1">#This changes the color of the RGB LED. These values can be between 0 and 100.</span>
+<span class="c1"># This changes the color of the RGB LED. These values can be between 0 and 100.</span>
 
 <span class="n">rgb_led</span><span class="o">.</span><span class="n">off</span><span class="p">()</span>
-<span class="c1">#This will turn the RGB LED off.</span>
+<span class="c1"># This will turn the RGB LED off.</span>
 
 <span class="n">raspi_components</span><span class="o">.</span><span class="n">RGBLedTest</span><span class="o">.</span><span class="n">test</span><span class="p">(</span><span class="n">red_pin</span><span class="p">,</span> <span class="n">green_pin</span><span class="p">,</span> <span class="n">blue_pin</span><span class="p">)</span>
-<span class="c1">#This is a test class, it will turn the RGB LED on and off, and randomly assign</span>
-<span class="c1">#it a color.</span>
+<span class="c1"># This is a test class, it will turn the RGB LED on and off, and randomly assign</span>
+<span class="c1"># it a color.</span>
 </pre></div>
 </div>
+</div>
+<div class="section" id="the-buzzer-class">
+<h2>The Buzzer class:<a class="headerlink" href="#the-buzzer-class" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>Wiring examples:</p>
+<a class="reference internal image-reference" href="_images/buzzer_bb.jpg"><img alt="_images/buzzer_bb.jpg" src="_images/buzzer_bb.jpg" style="width: 300px;" /></a>
+<a class="reference internal image-reference" href="_images/buzzer_schem.jpg"><img alt="_images/buzzer_schem.jpg" src="_images/buzzer_schem.jpg" style="width: 325px;" /></a>
+<p>Class overview:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">buzzer</span> <span class="o">=</span> <span class="n">raspi_components</span><span class="o">.</span><span class="n">Buzzer</span><span class="p">(</span><span class="n">pin</span><span class="p">)</span>
+<span class="c1"># This initiates the buzzer class on the chosen pin.</span>
+
+<span class="n">buzzer</span><span class="o">.</span><span class="n">on</span><span class="p">()</span>
+<span class="c1"># This will turn the buzzer on.</span>
+
+<span class="n">buzzer</span><span class="o">.</span><span class="n">off</span><span class="p">()</span>
+<span class="c1"># This will turn the buzzer off.</span>
+
+<span class="n">BuzzerTest</span><span class="o">.</span><span class="n">test</span><span class="p">(</span><span class="n">pin</span><span class="p">)</span>
+<span class="c1"># This is the test class for the buzzer. When initialized it will</span>
+<span class="c1"># turn the buzzer on for one second.</span>
+</pre></div>
+</div>
+</div></blockquote>
 </div>
 <div class="section" id="contribute">
 <h2>Contribute<a class="headerlink" href="#contribute" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/Builder212/raspi_components/issues">Issue Tracker</a></p></li>
 <li><p><a class="reference external" href="https://github.com/Builder212/raspi_components/">Source Code</a></p></li>
+<li><p><a class="reference external" href="https://raspi-components.readthedocs.io/en/latest/?#">Documentation</a></p></li>
+<li><p><a class="reference external" href="https://pypi.org/project/raspi-components/">Package on PyPi</a></p></li>
 </ul>
 </div>
 <div class="section" id="support">

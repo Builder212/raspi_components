@@ -1,12 +1,16 @@
 import RPi.GPIO as GPIO
 from .light_errors import RGBLedError
 
-class RGB_LED:
+class RGBLed:
+    """
+    This class is used to control a RGB LED via the GPIO.
+    Please make sure you have 220 Ohm resistors between the 3 gpio pins
+    and the LED.
+    """
+
     def __init__(self, red_pin, green_pin, blue_pin):
         """
-        This class is used to control a RGB LED via the GPIO.
-        Please make sure you have 220 Ohm resistors between the 3 gpio pins
-        and the LED.
+        This initiates the pins needed to work with the RGB LED.
         """
         try:
             self.red_pin = int(red_pin)

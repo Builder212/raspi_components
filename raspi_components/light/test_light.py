@@ -1,5 +1,5 @@
 from time import sleep
-from .light import LED
+from .light import Led
 
 class LedTest:
     def __init__():
@@ -11,11 +11,14 @@ class LedTest:
 
     @classmethod
     def test(cls, pin):
+        """
+        This will loop turning the LED on and off, and dimming it.
+        """
         try:
-            led = LED(pin)
+            led = Led(pin)
 
             while True:
-                led.on()
+                led.on(0)
                 for x in range(0,100,1):
                     led.dim(x)
                     sleep(.1)

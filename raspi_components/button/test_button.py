@@ -11,6 +11,10 @@ class ButtonTest:
 
     @classmethod
     def test(self, pin):
+        """
+        This will run through a loop, checking if the defined button was pressed
+        every second. It will print True if it is, otherwise it will pring False.
+        """
         button = Button(pin)
 
         try:

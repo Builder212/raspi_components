@@ -1,4 +1,4 @@
-from .rgb_light import RGB_LED
+from .rgb_light import RGBLed
 from time import sleep
 from random import randint
 
@@ -13,8 +13,12 @@ class RGBLedTest:
 
     @classmethod
     def test(self, rpin, gpin, bpin):
+        """
+        This will turn the RGB LED on, and then randomly select a color to set the
+        RGB LED to.
+        """
         try:
-            led = RGB_LED(rpin, gpin, bpin)
+            led = RGBLed(rpin, gpin, bpin)
             led.on()
 
             while True:
