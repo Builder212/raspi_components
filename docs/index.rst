@@ -36,8 +36,10 @@ Wiring examples:
 
 .. image:: schems/button_bb.jpg
   :width: 325
+  :alt: breadboard
 .. image:: schems/button_schem.jpg
   :width: 325
+  :alt: schem
 
 Class overview:
 
@@ -60,8 +62,10 @@ Wiring examples:
 
 .. image:: schems/led_bb.jpg
   :width: 325
+  :alt: breadboard
 .. image:: schems/led_schem.jpg
   :width: 325
+  :alt: schem
 
 Class overview:
 
@@ -92,8 +96,10 @@ Wiring examples:
 
 .. image:: schems/rgb_led_bb.jpg
   :width: 325
+  :alt: breadboard
 .. image:: schems/rgb_led_schem.jpg
   :width: 325
+  :alt: schem
 
 Class overview:
 
@@ -125,8 +131,10 @@ The Buzzer class:
 
     .. image:: schems/buzzer_bb.jpg
       :width: 300
+      :alt: breadboard
     .. image:: schems/buzzer_schem.jpg
       :width: 325
+      :alt: schem
 
     Class overview:
 
