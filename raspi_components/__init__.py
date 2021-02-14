@@ -22,3 +22,17 @@ from .buzzer.buzzer_errors import BuzzerError
 from .buzzer.buzzer import Buzzer
 # Imports the BuzzerTest class, the test class for the buzzer.
 from .buzzer.test_buzzer import BuzzerTest
+
+# Imports the ADCError class.
+from .ADC.ADC_errors import ADCError
+# Imports the PCF class.
+from .ADC.ADC import PCF
+# Imports ADCTest, the test class for the PCF.
+from .ADC.test_ADC import ADCTest
+
+# Imports the PotentiometerError class.
+from .potentiometer.potentiometer_errors import PotentiometerError
+# Imports the Potentiometer class.
+from .potentiometer.potentiometer import Potentiometer
+# Imports PotentiometerTest, the test class for the potentiometer.
+from .potentiometer.test_potentiometer import PotentiometerTest
