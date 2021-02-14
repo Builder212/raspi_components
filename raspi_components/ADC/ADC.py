@@ -38,8 +38,8 @@ class PCF():
         value = self.bus.read_byte_data(self.address, self.cmd+chn)
         return value
 
-    def write(self, value):
+    def write(self, chn, value):
         """
         This writes a value to the specified channel on the ADC.
         """
-        self.bus.write_byte_data(address,cmd,value)
+        self.bus.write_byte_data(self.address, self.cmd+chn, value)

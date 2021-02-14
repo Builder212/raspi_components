@@ -7,6 +7,8 @@
 - LEDs
 - RGB LEDs
 - Active Buzzers
+- PCF8591
+- Potentiometers
 
 You can download the stable release of this package by running
 `pip install raspi-components`

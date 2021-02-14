@@ -11,11 +11,12 @@ class PotentiometerTest:
     def test(self, chn):
         """
         """
-        potentiometer = Potentiometer()
+        potentiometer = Potentiometer(chn)
 
         try:
             while True:
-                print(potentiometer.read_value(chn))
+                value, voltage = potentiometer.read_value()
+                print('Value: {}, Voltage: {}'.format(value, round(voltage, 1)))
                 sleep(0.1)
         except KeyboardInterrupt:
             potentiometer.close()

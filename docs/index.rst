@@ -13,6 +13,9 @@ This library can work with components such as:
 - Buttons
 - LEDs
 - RGB LEDs
+- Active Buzzers
+- PCF8591
+- Potentiometers
 
 Installation
 ------------
@@ -152,6 +155,64 @@ The Buzzer class:
         BuzzerTest.test(pin)
         # This is the test class for the buzzer. When initialized it will
         # turn the buzzer on for one second.
+
+
+The ADC class:
+-----------------
+
+    Wiring examples:
+
+    .. image:: schems/ADC_bb.jpg
+        :width: 300
+        :alt: breadboard
+    .. image:: schems/ADC_schem.jpg
+          :width: 325
+          :alt: schem
+
+    Class overview:
+
+    .. code-block:: python
+
+        adc = raspi_components.PCF()
+        # This initiates the PCF class.
+
+        adc.is_connected()
+        # Checks to see if the adc is connected. Raises an error if it is not.
+
+        adc.close()
+        # Closes the adc connection.
+
+        value = adc.read(channel)
+        # Returns the value from a given channel.
+
+        adc.write(channel, value)
+        # Writes the specified value to the given channel.
+
+The Potentiometer class:
+-----------------
+
+    Wiring examples:
+
+    .. image:: schems/potentiometer_bb.jpg
+        :width: 300
+        :alt: breadboard
+    .. image:: schems/potentiometer_schem.jpg
+        :width: 325
+        :alt: schem
+
+    Class overview:
+
+    .. code-block:: python
+
+        potentiometer = raspi_components.Potentiometer(channel)
+        # This initiates the Potentiometer class on the given channel.
+
+        Value, Voltage = potentiometer.read_value()
+        # Returns the value of the potentiometer as well as the voltage.
+
+        potentiometer.close()
+        # Closes the potentiometer.
+
 
 Contribute
 ----------
