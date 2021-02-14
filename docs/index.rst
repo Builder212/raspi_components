@@ -191,6 +191,8 @@ The ADC class:
 The Potentiometer class:
 -----------------
 
+This also works with photoresistors and thermistors.
+
     Wiring examples:
 
     .. image:: schems/potentiometer_bb.jpg
