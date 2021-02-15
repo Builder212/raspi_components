@@ -16,6 +16,9 @@ This library can work with components such as:
 - Active Buzzers
 - PCF8591
 - Potentiometers
+- Photoresistors
+- Thermistors
+- Joysticks
 
 Installation
 ------------
@@ -233,6 +236,30 @@ This works with potentiometers, photoresistors and thermistors.
         resistor.close()
         # Closes the ADC connection.
 
+The ADC class:
+--------------
+
+    Wiring examples:
+
+    .. image:: schems/Joystick_bb.jpg
+        :width: 300
+        :alt: breadboard
+    .. image:: schems/Joystick_schem.jpg
+        :width: 325
+        :alt: schem
+
+    Class overview:
+
+    .. code-block:: python
+
+        joystick = raspi_components.Joystick(xChannel, yChannel, zPin)
+        # This initiates the Joystick class. The X and Y are read through the ADC, and the z value is read through a pin.
+
+        x, y, z = joystick.read()
+        # This returns the x, y, and z values read from the specified joystick.
+
+        joystick.close()
+        # This closes the connection to the ADC.
 
 Contribute
 ----------

@@ -44,6 +44,9 @@ different components connected to the raspberry pi via its gpio.</p>
 <li><p>Active Buzzers</p></li>
 <li><p>PCF8591</p></li>
 <li><p>Potentiometers</p></li>
+<li><p>Photoresistors</p></li>
+<li><p>Thermistors</p></li>
+<li><p>Joysticks</p></li>
 </ul>
 </div>
 <div class="section" id="installation">
@@ -203,6 +206,25 @@ different components connected to the raspberry pi via its gpio.</p>
 
 <span class="n">resistor</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 <span class="c1"># Closes the ADC connection.</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="id1">
+<h2>The ADC class:<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>Wiring examples:</p>
+<a class="reference internal image-reference" href="_images/Joystick_bb.jpg"><img alt="breadboard" src="_images/Joystick_bb.jpg" style="width: 300px;" /></a>
+<a class="reference internal image-reference" href="_images/Joystick_schem.jpg"><img alt="schem" src="_images/Joystick_schem.jpg" style="width: 325px;" /></a>
+<p>Class overview:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">joystick</span> <span class="o">=</span> <span class="n">raspi_components</span><span class="o">.</span><span class="n">Joystick</span><span class="p">(</span><span class="n">xChannel</span><span class="p">,</span> <span class="n">yChannel</span><span class="p">,</span> <span class="n">zPin</span><span class="p">)</span>
+<span class="c1"># This initiates the Joystick class. The X and Y are read through the ADC, and the z value is read through a pin.</span>
+
+<span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="n">joystick</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="c1"># This returns the x, y, and z values read from the specified joystick.</span>
+
+<span class="n">joystick</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="c1"># This closes the connection to the ADC.</span>
 </pre></div>
 </div>
 </div></blockquote>

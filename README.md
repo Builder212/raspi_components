@@ -11,6 +11,7 @@
 - Potentiometers
 - Photoresistors
 - Thermistors
+- Joysticks
 
 You can download the stable release of this package by running
 `pip install raspi-components`

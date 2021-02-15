@@ -2,7 +2,7 @@ import RPi.GPIO as GPIO
 from ..ADC.ADC import PCF
 from ..ADC.ADC_errors import ADCError
 
-class joystick:
+class Joystick:
     """
     This class is used to get the values from a joystick.
     """
@@ -33,20 +33,8 @@ class joystick:
         z = GPIO.input(self.zPin)
         return x, y, z
 
-    def close():
+    def close(self):
         """
         closes the connection with the adc.
         """
         self.adc.close()
-
-if __name__ == '__main__':
-    print('Program is starting ... ')
-    pin = input("What pin is your joystick connected too? ")
-    print("\n")
-    joystick = joystick()
-
-    try:
-        while True:
-            print(joystick.read_joystick())
-    except KeyboardInterrupt:
-        joystick.destroy()

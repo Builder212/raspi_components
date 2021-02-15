@@ -36,3 +36,10 @@ from .variable_resistor.resistor_errors import ResistorError
 from .variable_resistor.resistor import VariableResistor
 # Imports PotentiometerTest, the test class for the potentiometer.
 from .variable_resistor.test_resistor import ResistorTest
+
+# Imports the JoystickError class.
+from .joystick.joystick_errors import JoystickError
+# Imports the Joystick class.
+from .joystick.joystick import Joystick
+# Imports JoystickTest, the test class for the joystick.
+from .joystick.test_joystick import JoystickTest

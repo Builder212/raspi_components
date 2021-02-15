@@ -10,16 +10,16 @@ class JoystickTest:
         pass
 
     @classmethod
-    def test(self, chn):
+    def test(self, xchn, ychn, zpin):
         """
         This will print the value of x, y, and z in a loop.
         """
-        joystick = Joystick(1, 0, 12)
+        joystick = Joystick(xchn, ychn, zpin)
 
         try:
             while True:
                 x, y, z = joystick.read()
-                print('x: {}, y: {}, z: {}'.format(x,y,z)
+                print('x: {}, y: {}, z: {}'.format(x,y,z))
                 sleep(0.1)
         except KeyboardInterrupt:
             joystick.close()
