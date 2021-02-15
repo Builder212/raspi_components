@@ -236,8 +236,8 @@ This works with potentiometers, photoresistors and thermistors.
         resistor.close()
         # Closes the ADC connection.
 
-The ADC class:
---------------
+The Joystick class:
+-------------------
 
     Wiring examples:
 
