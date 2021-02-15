@@ -41,6 +41,9 @@ different components connected to the raspberry pi via its gpio.</p>
 <li><p>Buttons</p></li>
 <li><p>LEDs</p></li>
 <li><p>RGB LEDs</p></li>
+<li><p>Active Buzzers</p></li>
+<li><p>PCF8591</p></li>
+<li><p>Potentiometers</p></li>
 </ul>
 </div>
 <div class="section" id="installation">
@@ -60,8 +63,8 @@ different components connected to the raspberry pi via its gpio.</p>
 <div class="section" id="the-button-class">
 <h2>The Button class:<a class="headerlink" href="#the-button-class" title="Permalink to this headline">¶</a></h2>
 <p>Wiring examples:</p>
-<a class="reference internal image-reference" href="_images/button_bb.jpg"><img alt="_images/button_bb.jpg" src="_images/button_bb.jpg" style="width: 325px;" /></a>
-<a class="reference internal image-reference" href="_images/button_schem.jpg"><img alt="_images/button_schem.jpg" src="_images/button_schem.jpg" style="width: 325px;" /></a>
+<a class="reference internal image-reference" href="_images/button_bb.jpg"><img alt="breadboard" src="_images/button_bb.jpg" style="width: 325px;" /></a>
+<a class="reference internal image-reference" href="_images/button_schem.jpg"><img alt="schem" src="_images/button_schem.jpg" style="width: 325px;" /></a>
 <p>Class overview:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">button</span> <span class="o">=</span> <span class="n">raspi_components</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="n">pin</span><span class="p">)</span>
 <span class="c1"># This initiates the button class on the chosen pin.</span>
@@ -78,8 +81,8 @@ different components connected to the raspberry pi via its gpio.</p>
 <div class="section" id="the-led-class">
 <h2>The Led class:<a class="headerlink" href="#the-led-class" title="Permalink to this headline">¶</a></h2>
 <p>Wiring examples:</p>
-<a class="reference internal image-reference" href="_images/led_bb.jpg"><img alt="_images/led_bb.jpg" src="_images/led_bb.jpg" style="width: 325px;" /></a>
-<a class="reference internal image-reference" href="_images/led_schem.jpg"><img alt="_images/led_schem.jpg" src="_images/led_schem.jpg" style="width: 325px;" /></a>
+<a class="reference internal image-reference" href="_images/led_bb.jpg"><img alt="breadboard" src="_images/led_bb.jpg" style="width: 325px;" /></a>
+<a class="reference internal image-reference" href="_images/led_schem.jpg"><img alt="schem" src="_images/led_schem.jpg" style="width: 325px;" /></a>
 <p>Class overview:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">led</span> <span class="o">=</span> <span class="n">raspi_components</span><span class="o">.</span><span class="n">Led</span><span class="p">(</span><span class="n">pin</span><span class="p">)</span>
 <span class="c1"># This initiates the LED on the chosen pin.</span>
@@ -104,8 +107,8 @@ different components connected to the raspberry pi via its gpio.</p>
 <div class="section" id="the-rgbled-class">
 <h2>The RGBLed class:<a class="headerlink" href="#the-rgbled-class" title="Permalink to this headline">¶</a></h2>
 <p>Wiring examples:</p>
-<a class="reference internal image-reference" href="_images/rgb_led_bb.jpg"><img alt="_images/rgb_led_bb.jpg" src="_images/rgb_led_bb.jpg" style="width: 325px;" /></a>
-<a class="reference internal image-reference" href="_images/rgb_led_schem.jpg"><img alt="_images/rgb_led_schem.jpg" src="_images/rgb_led_schem.jpg" style="width: 325px;" /></a>
+<a class="reference internal image-reference" href="_images/rgb_led_bb.jpg"><img alt="breadboard" src="_images/rgb_led_bb.jpg" style="width: 325px;" /></a>
+<a class="reference internal image-reference" href="_images/rgb_led_schem.jpg"><img alt="schem" src="_images/rgb_led_schem.jpg" style="width: 325px;" /></a>
 <p>Class overview:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">rgb_led</span> <span class="o">=</span> <span class="n">raspi_components</span><span class="o">.</span><span class="n">RGBLed</span><span class="p">(</span><span class="n">red_pin</span><span class="p">,</span> <span class="n">green_pin</span><span class="p">,</span> <span class="n">blue_pin</span><span class="p">)</span>
 <span class="c1"># This initiates the RGB LED, taking the input of the chosen pins for</span>
@@ -132,8 +135,8 @@ different components connected to the raspberry pi via its gpio.</p>
 <h2>The Buzzer class:<a class="headerlink" href="#the-buzzer-class" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p>Wiring examples:</p>
-<a class="reference internal image-reference" href="_images/buzzer_bb.jpg"><img alt="_images/buzzer_bb.jpg" src="_images/buzzer_bb.jpg" style="width: 300px;" /></a>
-<a class="reference internal image-reference" href="_images/buzzer_schem.jpg"><img alt="_images/buzzer_schem.jpg" src="_images/buzzer_schem.jpg" style="width: 325px;" /></a>
+<a class="reference internal image-reference" href="_images/buzzer_bb.jpg"><img alt="breadboard" src="_images/buzzer_bb.jpg" style="width: 300px;" /></a>
+<a class="reference internal image-reference" href="_images/buzzer_schem.jpg"><img alt="schem" src="_images/buzzer_schem.jpg" style="width: 325px;" /></a>
 <p>Class overview:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">buzzer</span> <span class="o">=</span> <span class="n">raspi_components</span><span class="o">.</span><span class="n">Buzzer</span><span class="p">(</span><span class="n">pin</span><span class="p">)</span>
 <span class="c1"># This initiates the buzzer class on the chosen pin.</span>
@@ -147,6 +150,59 @@ different components connected to the raspberry pi via its gpio.</p>
 <span class="n">BuzzerTest</span><span class="o">.</span><span class="n">test</span><span class="p">(</span><span class="n">pin</span><span class="p">)</span>
 <span class="c1"># This is the test class for the buzzer. When initialized it will</span>
 <span class="c1"># turn the buzzer on for one second.</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="the-adc-class">
+<h2>The ADC class:<a class="headerlink" href="#the-adc-class" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>Wiring examples:</p>
+<a class="reference internal image-reference" href="_images/ADC_bb.jpg"><img alt="breadboard" src="_images/ADC_bb.jpg" style="width: 300px;" /></a>
+<a class="reference internal image-reference" href="_images/ADC_schem.jpg"><img alt="schem" src="_images/ADC_schem.jpg" style="width: 325px;" /></a>
+<p>Class overview:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">adc</span> <span class="o">=</span> <span class="n">raspi_components</span><span class="o">.</span><span class="n">PCF</span><span class="p">()</span>
+<span class="c1"># This initiates the PCF class.</span>
+
+<span class="n">adc</span><span class="o">.</span><span class="n">is_connected</span><span class="p">()</span>
+<span class="c1"># Checks to see if the adc is connected. Raises an error if it is not.</span>
+
+<span class="n">adc</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="c1"># Closes the adc connection.</span>
+
+<span class="n">value</span> <span class="o">=</span> <span class="n">adc</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">channel</span><span class="p">)</span>
+<span class="c1"># Returns the value from a given channel.</span>
+
+<span class="n">adc</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">channel</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+<span class="c1"># Writes the specified value to the given channel.</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="the-variableresistor-class">
+<h2>The VariableResistor class:<a class="headerlink" href="#the-variableresistor-class" title="Permalink to this headline">¶</a></h2>
+<p>This works with potentiometers, photoresistors and thermistors.</p>
+<blockquote>
+<div><p>Wiring examples:</p>
+<a class="reference internal image-reference" href="_images/potentiometer_bb.jpg"><img alt="breadboard" src="_images/potentiometer_bb.jpg" style="width: 300px;" /></a>
+<a class="reference internal image-reference" href="_images/potentiometer_schem.jpg"><img alt="schem" src="_images/potentiometer_schem.jpg" style="width: 325px;" /></a>
+<a class="reference internal image-reference" href="_images/photoresistor_bb.jpg"><img alt="breadboard" src="_images/photoresistor_bb.jpg" style="width: 300px;" /></a>
+<a class="reference internal image-reference" href="_images/photoresistor_schem.jpg"><img alt="schem" src="_images/photoresistor_schem.jpg" style="width: 325px;" /></a>
+<a class="reference internal image-reference" href="_images/thermistor_bb.jpg"><img alt="breadboard" src="_images/thermistor_bb.jpg" style="width: 300px;" /></a>
+<a class="reference internal image-reference" href="_images/thermistor_schem.jpg"><img alt="schem" src="_images/thermistor_schem.jpg" style="width: 325px;" /></a>
+<p>Class overview:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">resistor</span> <span class="o">=</span> <span class="n">raspi_components</span><span class="o">.</span><span class="n">VariableResistor</span><span class="p">(</span><span class="n">channel</span><span class="p">)</span>
+<span class="c1"># This initiates the VariableResistor class on the given channel.</span>
+
+<span class="n">Value</span><span class="p">,</span> <span class="n">Voltage</span><span class="p">,</span> <span class="n">Resistance</span> <span class="o">=</span> <span class="n">resistor</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="c1"># Returns the value of the resistor as well as the voltage and the resistance.</span>
+
+<span class="n">temp</span> <span class="o">=</span> <span class="n">resistor</span><span class="o">.</span><span class="n">temp</span><span class="p">(</span><span class="n">Resistance</span><span class="p">)</span>
+<span class="c1"># This is to be used with the thermistor. It takes the given resistance from</span>
+<span class="c1"># the thermistor and returns the temperature.</span>
+
+<span class="n">resistor</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="c1"># Closes the ADC connection.</span>
 </pre></div>
 </div>
 </div></blockquote>

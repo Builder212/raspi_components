@@ -158,7 +158,7 @@ The Buzzer class:
 
 
 The ADC class:
------------------
+--------------
 
     Wiring examples:
 
@@ -188,10 +188,10 @@ The ADC class:
         adc.write(channel, value)
         # Writes the specified value to the given channel.
 
-The Potentiometer class:
------------------
+The VariableResistor class:
+---------------------------
 
-This also works with photoresistors and thermistors.
+This works with potentiometers, photoresistors and thermistors.
 
     Wiring examples:
 
@@ -202,18 +202,36 @@ This also works with photoresistors and thermistors.
         :width: 325
         :alt: schem
 
+    .. image:: schems/photoresistor_bb.jpg
+        :width: 300
+        :alt: breadboard
+    .. image:: schems/photoresistor_schem.jpg
+        :width: 325
+        :alt: schem
+
+    .. image:: schems/thermistor_bb.jpg
+        :width: 300
+        :alt: breadboard
+    .. image:: schems/thermistor_schem.jpg
+        :width: 325
+        :alt: schem
+
     Class overview:
 
     .. code-block:: python
 
-        potentiometer = raspi_components.Potentiometer(channel)
-        # This initiates the Potentiometer class on the given channel.
+        resistor = raspi_components.VariableResistor(channel)
+        # This initiates the VariableResistor class on the given channel.
 
-        Value, Voltage = potentiometer.read_value()
-        # Returns the value of the potentiometer as well as the voltage.
+        Value, Voltage, Resistance = resistor.read()
+        # Returns the value of the resistor as well as the voltage and the resistance.
 
-        potentiometer.close()
-        # Closes the potentiometer.
+        temp = resistor.temp(Resistance)
+        # This is to be used with the thermistor. It takes the given resistance from
+        # the thermistor and returns the temperature.
+
+        resistor.close()
+        # Closes the ADC connection.
 
 
 Contribute

@@ -31,8 +31,8 @@ from .ADC.ADC import PCF
 from .ADC.test_ADC import ADCTest
 
 # Imports the PotentiometerError class.
-from .potentiometer.potentiometer_errors import PotentiometerError
+from .variable_resistor.resistor_errors import ResistorError
 # Imports the Potentiometer class.
-from .potentiometer.potentiometer import Potentiometer
+from .variable_resistor.resistor import VariableResistor
 # Imports PotentiometerTest, the test class for the potentiometer.
-from .potentiometer.test_potentiometer import PotentiometerTest
+from .variable_resistor.test_resistor import ResistorTest

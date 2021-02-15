@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setup(
     name="raspi_components",
-    version="1.1.4",
+    version="1.1.10",
     author="Builder212",
     description="A python package for using certain components with the raspberry pi.",
     long_description=long_description,
